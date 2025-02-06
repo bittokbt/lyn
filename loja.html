@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojinha <3</title>
+    <link rel="icon" type="image/jpg" href="../static/kitty.jpg">
+    <link href="../static/style3.css" rel="stylesheet">
+</head>
+<body>
+    <a href="/"><button id="pagina">&lt;- Voltar</button></a>
+    <div class="plataforma" id="p1">
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Action Figure Kurapika">
+            <input type="hidden" name="preco" value="300">
+            <button type="submit" class="buy" id="b1">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Brawl Pass">
+            <input type="hidden" name="preco" value="200">
+            <button type="submit" class="buy" id="b2">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Álbum Ivana Wonder">
+            <input type="hidden" name="preco" value="150">
+            <button type="submit" class="buy" id="b3">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Álbum Lil Peep">
+            <input type="hidden" name="preco" value="150">
+            <button type="submit" class="buy" id="b4">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Lasanha">
+            <input type="hidden" name="preco" value="60">
+            <button type="submit" class="buy" id="b5">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Batata Frita">
+            <input type="hidden" name="preco" value="50">
+            <button type="submit" class="buy" id="b6">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Chocolate">
+            <input type="hidden" name="preco" value="40">
+            <button type="submit" class="buy" id="b7">Comprar</button>
+        </form>
+        <form action="/comprar" method="post">
+            <input type="hidden" name="produto" value="Miojo (podre)">
+            <input type="hidden" name="preco" value="5">
+            <button type="submit" class="buy" id="b8">Comprar</button>
+        </form>
+        <p id="titolo1">Produtos</p>
+        <div class="linha" id="l1"></div>
+        <div class="linha" id="l2"></div>
+        <div class="linha" id="l3"></div>
+        <div class="linha" id="l4"></div>
+        <div class="linha" id="l5"></div>
+        <div class="linha" id="l6"></div>
+        <div class="linha" id="l7"></div>
+        <div class="linha" id="l8"></div>
+        <img id="blue" src="static/blue.jpeg">
+        <img id="kpika" src="static/kurapika.png">
+        <img id="pass" src="static/pass.png">
+        <img id="peep" src="static/peep.jpeg">
+        <img id="lasanha" src="static/lasanha.jpg">
+        <img id="frita" src="static/frita.jpg">
+        <img id="choco" src="static/choco.png">
+        <img id="miojo" src="static/miojo.jpg">
+        <p class="info" id="i1">Nome: Action Figure Kurapika
+Preço: 300$
+        </p>
+        <p class="info" id="i2">Nome: Brawl Pass
+Preço: 200$
+        </p>
+        <p class="info" id="i3">Nome: Álbum Ivana Wonder
+Preço: 150$
+        </p>
+        <p class="info" id="i3">Nome: Álbum Ivana Wonder
+Preço: 150$
+        </p>
+        <p class="info" id="i4">Nome: Álbum Lil Peep
+Preço: 150$
+        </p>
+        <p class="info" id="i5">Nome: Lasanha
+Preço: 60$
+        </p>
+        <p class="info" id="i6">Nome: Batata Frita
+Preço: 50$
+        </p>
+        <p class="info" id="i7">Nome: Chocolate
+Preço: 40$
+        </p>
+        <p class="info" id="i8">Nome: Miojo (podre)
+Preço: 5$
+        </p>
+    </div>
+    <div class="plataforma" id="p2">
+        <p id="titolo2">Saldo: {{ saldo }}$</p>
+        <form action="/trabalhar" method="post">
+            <button id="chegadepreguiça" type="submit">Trabalhar (+50$)</button>
+        </form>
+    </div>
+    <p id="testo">Essa é a Lojinha. Você tem um saldo e pode "comprar" produtos. Caso falte dinheiro, você pode trabalhar para conseguir mais!!</p>
+</body>
+</html>

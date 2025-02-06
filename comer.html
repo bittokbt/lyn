@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/style2.css" rel="stylesheet">
+        <title>Dorminhoco!!</title>
+        <link rel="icon" type="image/jpg" href="../static/kitty.jpg">
+    </head>
+    <body>
+        <a href="/"><button id="pagina">Voltar</button></a>
+        <div id="NAOquadrado"></div>
+        <form method="POST" action="/comer"><button id="botaodacomilanciafodastica" type="submit">Dormir</button></form>
+        <p id="qtd">Quantidade dormida: {{ quantidade_comida }}</p>
+        <img id="lasagna" src="static/dorma.gif">
+        <h1 id="titlo">Bem-vinda ao Dorminhoco!!</h1>
+        <p id="textofoda">Você é uma pessoa que gosta bastante de dormir (pelo menos eu acho). Esse "jogo" é basicamente um simulador de dormir (é, não tenho muita criatividade). Além disso, há um contador de dormidas (que reseta toda vez que vc sai do site, então não serve para contar quantas vezes vc dormiu na vida real).</p>
+    </body>
+</html>
+
+<script>
+function adicionarEstrelas() {
+    const espacamento = 25; // Espaçamento entre as estrelas (em vw)
+    const alturaTelaVW = window.innerHeight / window.innerWidth * 100; // Converte altura da tela para vw
+    const quantidade = Math.ceil(alturaTelaVW / espacamento) * 0.8; // Reduzindo um pouco a quantidade
+
+    for (let i = 0; i < quantidade; i++) {
+        let topPos = i * espacamento + 5;
+
+        // Verificar se a estrela será totalmente visível na tela
+        if (topPos + 5 <= alturaTelaVW) { // Ajuste 5vw para o tamanho da estrela
+            // Criar estrela da esquerda
+            let starEsquerda = document.createElement("img");
+            starEsquerda.src = "static/flor.png";
+            starEsquerda.classList.add("flor");
+            starEsquerda.style.left = `${Math.random() * 10 + 5}vw`; // Entre 5vw e 15vw
+            starEsquerda.style.top = `${topPos}vw`;
+            starEsquerda.style.transform = `rotate(${Math.floor(Math.random() * 61) - 10}deg)`;
+            document.body.appendChild(starEsquerda);
+
+            // Criar estrela da direita
+            let starDireita = document.createElement("img");
+            starDireita.src = "static/flor.png";
+            starDireita.classList.add("flor");
+            starDireita.style.right = `${Math.random() * 5 + 5}vw`; // Entre 5vw e 15vw
+            starDireita.style.top = `${topPos}vw`;
+            starDireita.style.transform = `rotate(${Math.floor(Math.random() * 60) - 10}deg)`;
+            document.body.appendChild(starDireita);
+        }
+    }
+}
+
+window.addEventListener("load", () => {
+    adicionarEstrelas();
+});
+
+window.addEventListener("resize", () => location.reload());
+</script>

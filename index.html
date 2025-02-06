@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style1.css" rel="stylesheet">
+    <title>Lyn!!!</title>
+    <link rel="icon" type="image/jpg" href="../static/kitty.jpg">
+</head>
+<body>
+    <div id="square">
+        <h1 id="jogo">Jogos:</h1>
+        <a href="/comer"><button class="butt">Dorminhoco!!</button></a>
+        <a href="/loja"><button class="butt">Lojinha <3</button></a>
+        <img id="gif" src="static/hello.gif">
+        <h1 id="title">LYNN!!</h1>
+        <p id="txt">Você é uma pessoa muito legal, mas sofre muito mais do que
+deveria e eu sei muito bem disso. Então, decidi criar esse site para
+te alegrar um pouco!! Ele consiste de dois minijogos que me lembram
+você; eles são bem simplesinhos, mas prometo que dei o meu
+melhor!! Espero que goste <3</p>
+    </div>
+</body>
+</html>
+
+<script>
+    function adicionarPapeis() {
+        const espacamento = 8; // Espaço entre os papéis (em vw)
+        const alturaTelaVW = window.innerHeight / window.innerWidth * 100; // Converte altura da tela para vw
+        const quantidade = Math.ceil(alturaTelaVW / espacamento) * 1.2; // Reduzindo a quantidade de papéis
+
+        for (let i = 0; i < quantidade; i++) {
+            let topPos = i * espacamento;
+
+            // Criar papel da esquerda
+            let papelEsquerda = document.createElement("img");
+            papelEsquerda.src = "static/papel.png";
+            papelEsquerda.classList.add("papel");
+            papelEsquerda.style.left = "20vw";
+            papelEsquerda.style.top = `${topPos}vw`;
+            papelEsquerda.style.transform = `rotate(${Math.floor(Math.random() * 21) + 80}deg)`;
+            document.body.appendChild(papelEsquerda);
+
+            // Criar papel da direita
+            let papelDireita = document.createElement("img");
+            papelDireita.src = "static/papel.png";
+            papelDireita.classList.add("papel");
+            papelDireita.style.right = "20vw";
+            papelDireita.style.top = `${topPos}vw`;
+            papelDireita.style.transform = `rotate(${Math.floor(Math.random() * 21) - 100}deg)`;
+            document.body.appendChild(papelDireita);
+        }
+    }
+
+    function adicionarEstrelas() {
+        const espacamento = 15; // Espaçamento entre as estrelas (em vw)
+        const alturaTelaVW = window.innerHeight / window.innerWidth * 100; // Converte altura da tela para vw
+        const quantidade = Math.ceil(alturaTelaVW / espacamento) * 0.8; // Reduzindo um pouco a quantidade
+
+        for (let i = 0; i < quantidade; i++) {
+            let topPos = i * espacamento + 5;
+
+            // Verificar se a estrela será totalmente visível na tela
+            if (topPos + 5 <= alturaTelaVW) { // Ajuste 5vw para o tamanho da estrela
+                // Criar estrela da esquerda
+                let starEsquerda = document.createElement("img");
+                starEsquerda.src = "static/star.png";
+                starEsquerda.classList.add("star");
+                starEsquerda.style.left = `${Math.random() * 10 + 5}vw`; // Entre 5vw e 15vw
+                starEsquerda.style.top = `${topPos}vw`;
+                starEsquerda.style.transform = `rotate(${Math.floor(Math.random() * 61) - 30}deg)`;
+                document.body.appendChild(starEsquerda);
+
+                // Criar estrela da direita
+                let starDireita = document.createElement("img");
+                starDireita.src = "static/star.png";
+                starDireita.classList.add("star");
+                starDireita.style.right = `${Math.random() * 10 + 5}vw`; // Entre 5vw e 15vw
+                starDireita.style.top = `${topPos}vw`;
+                starDireita.style.transform = `rotate(${Math.floor(Math.random() * 61) - 30}deg)`;
+                document.body.appendChild(starDireita);
+            }
+        }
+    }
+
+    window.addEventListener("load", () => {
+        adicionarPapeis();
+        adicionarEstrelas();
+    });
+
+    window.addEventListener("resize", () => location.reload());
+</script>
